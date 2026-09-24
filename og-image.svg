@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">Dhruv Baslas | Data Engineer</title>
+  <desc id="description">Azure and Databricks Data Engineer portfolio</desc>
+  <rect width="1200" height="630" fill="#071014"/>
+  <path d="M0 500h1200" stroke="#17373a" stroke-width="2"/>
+  <path d="M820 0v630M940 0v630M1060 0v630" stroke="#102a2e" stroke-width="2"/>
+  <circle cx="1040" cy="170" r="150" fill="#102d31"/>
+  <text x="90" y="130" fill="#72d6cb" font-family="Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="5">DATA ENGINEER</text>
+  <text x="90" y="290" fill="#f1f7f5" font-family="Arial, sans-serif" font-size="86" font-weight="700">Dhruv Baslas</text>
+  <text x="94" y="355" fill="#9eafae" font-family="Arial, sans-serif" font-size="30">Azure · Databricks · PySpark · Lakehouse</text>
+  <rect x="90" y="455" width="150" height="8" rx="4" fill="#b8f36b"/>
+  <text x="90" y="525" fill="#9eafae" font-family="monospace" font-size="22">dhruvbaslas.github.io</text>
+  <text x="1050" y="530" fill="#b8f36b" font-family="Arial, sans-serif" font-size="86" font-weight="700" text-anchor="middle">db</text>
+</svg>
