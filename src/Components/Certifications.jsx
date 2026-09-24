@@ -65,7 +65,11 @@ function Certifications() {
                     <p>Innovated a next-generation architecture for a legacy ATM system with Innovaccer and IBM Bengaluru.</p>
                     <div className="achievement__publication">
                         <i className="bi bi-journal-text" />
-                        <span>Published: Framework for Encryption and Authentication Cryptosystem<br /><small>Issue Vol. 29 No. 10s (2020), pp. 4572-4576</small><a className="publication-link" href="https://sersc.org/journals/index.php/IJAST/article/view/22011" target="_blank" rel="noopener noreferrer">Read paper <i className="bi bi-arrow-up-right" /></a></span>
+                        <div>
+                            <span className="publication-title">Published: Framework for Encryption and Authentication Cryptosystem</span>
+                            <small>Issue Vol. 29 No. 10s (2020), pp. 4572-4576</small>
+                            <a className="publication-link" href="https://sersc.org/journals/index.php/IJAST/article/view/22011" target="_blank" rel="noopener noreferrer">Read paper <i className="bi bi-arrow-up-right" /></a>
+                        </div>
                     </div>
                 </article>
             </div>

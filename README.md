@@ -50,4 +50,4 @@ Each portfolio section is an independent component in `src/Components/`. `App.js
 
 ## License
 
-[MIT](LICENSE)
+MIT License. See [LICENSE](LICENSE).
