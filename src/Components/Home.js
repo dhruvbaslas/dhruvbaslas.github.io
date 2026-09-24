@@ -1,30 +1,28 @@
-import React from 'react'
-import './Experience.css';
+import React from 'react';
 
-function Home(props) {
-    var textColor;
-    if(props.theme === 'dark'){
-        textColor = 'white'
-    } else{
-        textColor = 'black'
-    }
+function Home() {
     return (
-        <>
-            <div id='homeRef' className="container-fluid">
-                <h1 className='d-flex justify-content-center' style={{ marginTop: '5%'}}><i className="bi bi-house-fill"> Home</i></h1>
-                <br></br>
-                <div className="row d-flex justify-content-center">
-                    <div className="card ExperienceCard typewriter" style={{width: '100%', textAlign:'center'}}>
-                        <div className="card-body ExperienceBody">
-                            <p style={{margin: '0', color:textColor, fontSize: '100%'}} className="card-text"><p id="title">Hello Stranger, I'm Dhruv Baslas</p></p>
-                            <p style={{margin: '0', color:textColor, fontSize: '90%'}} className="card-text">I'm going through every technology because I like to explore, I like to code, Netflix and Chill.</p>
-                            <p style={{margin: '0', color:textColor, fontSize: '80%'}} className="card-text">I'm very good at keeping secrets!</p>
-                        </div>
-                    </div>
+        <section id="homeRef" className="section hero" aria-labelledby="home-title">
+            <div className="hero__content">
+                <p className="eyebrow"><span className="status-dot" /> Data Engineer | Azure + Databricks</p>
+                <h1 id="home-title" className="hero__title">Dhruv Baslas</h1>
+                <p className="hero__role">Data Engineer building dependable data platforms.</p>
+                <p className="hero__text"><strong>About me:</strong> I have 6 years of experience designing scalable ETL/ELT pipelines, Lakehouse architectures, and governed data systems for global teams.</p>
+                <div className="hero__actions">
+                    <a className="button button--primary" href="#experienceRef">Explore my work <i className="bi bi-arrow-down-right" /></a>
+                    <a className="button button--quiet" href="https://www.linkedin.com/in/dhruvbaslas/" target="_blank" rel="noopener noreferrer">Let's connect <i className="bi bi-arrow-up-right" /></a>
                 </div>
             </div>
-        </>
-    )
+            <div className="hero__metrics" aria-label="Career highlights">
+                <div><strong>6</strong><span>years building data systems</span></div>
+                <div><strong>500 GB+</strong><span>daily data processed</span></div>
+                <div><strong>40%</strong><span>pipeline speed improvement</span></div>
+            </div>
+            <div className="skill-strip" aria-label="Core technologies">
+                {['Azure', 'Databricks', 'PySpark', 'Delta Lake', 'ADF', 'Unity Catalog', 'SQL'].map(skill => <span key={skill}>{skill}</span>)}
+            </div>
+        </section>
+    );
 }
 
 

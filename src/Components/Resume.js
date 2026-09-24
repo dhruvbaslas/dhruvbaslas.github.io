@@ -1,29 +1,16 @@
 import React from 'react';
-import './Experience.css'
-import resume from '../Static/resume.jpg'
 import resumepdf from '../Static/resume.pdf'
 
-function Resume(props) {
-    var textColor;
-    if(props.theme === 'dark'){
-        textColor = 'white'
-    } else{
-        textColor = 'black'
-    }
+function Resume() {
     return (
-        <> 
-            <div id='resumeRef' className="container-fluid">
-                <h1 className='d-flex justify-content-center' style={{ marginTop: '5%'}}><i className="bi bi-cloud-arrow-down-fill"> Resume</i></h1>
-                <br></br>
-                <div className="row d-flex justify-content-center">
-                    <a style={{fontSize: '40px', color:textColor, textAlign: 'center'}} href={resumepdf}  target="_blank" rel="noopener noreferrer"><i className="bi bi-download"></i></a>
-                    <div className="card ExperienceCard" style={{width: '80%'}}>
-                        <img style={{width: '75%'}} className="card-img-top" alt='Resume' src={resume}></img>
-                    </div>
-                </div>
+        <section id="resumeRef" className="section resume-section" aria-labelledby="resume-title">
+            <div className="section-heading"><div><p className="eyebrow">The short version</p><h2 id="resume-title" className="section__title">Resume</h2></div><a className="button button--primary" href={resumepdf} target="_blank" rel="noopener noreferrer">View full resume <i className="bi bi-arrow-up-right" /></a></div>
+            <div className="resume-panel">
+                <div><span className="resume-panel__label">Current focus</span><h3>Metadata-driven Lakehouse engineering</h3><p>Designing governed, observable data products across Azure, Databricks, and PySpark.</p></div>
+                <div className="resume-panel__aside"><span className="resume-panel__label">Core strength</span><strong>Architecture to operations</strong><span className="resume-panel__label">Available for</span><strong>Data platform leadership</strong></div>
             </div>
-        </>
-    )
+        </section>
+    );
 }
 
 

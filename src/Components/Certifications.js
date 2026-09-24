@@ -1,49 +1,76 @@
-import React from 'react'
-import './Certification.css';
-import ibmbadge from '../Static/ibmbadge.png'
-import az900 from '../Static/az900.png'
+import React from 'react';
 
-function Certifications(props) {
-    var textColor;
-    if(props.theme === 'dark'){
-        textColor = 'white'
-    } else{
-        textColor = 'black'
+const certifications = [
+    {
+        title: 'Azure Data Engineer Associate',
+        issuer: 'Microsoft Certified | DP-203',
+        date: 'Current credential',
+        url: 'https://www.credly.com/badges/00ab6b23-689b-4ed0-87e3-54df9bb128f5/public_url'
+    },
+    {
+        title: 'Azure Data Fundamentals',
+        issuer: 'Microsoft Certified | DP-900',
+        date: 'Current credential',
+        url: 'https://www.credly.com/badges/95fa9635-dc8d-46c8-9481-3823f88d6a44/public_url'
+    },
+    {
+        title: 'Azure Fundamentals',
+        issuer: 'Microsoft Certified | AZ-900',
+        date: 'January 2021',
+        url: 'https://www.credly.com/badges/29034a28-a2cb-498c-875f-070d6c900938'
+    },
+    {
+        title: 'Power Platform Fundamentals',
+        issuer: 'Microsoft Certified | PL-900',
+        date: 'Current credential',
+        url: 'https://www.credly.com/badges/c122dfee-3dad-4463-be11-1a85670bde3d'
+    },
+    {
+        title: 'Cloud Computing & Virtualization Graduate',
+        issuer: 'IBM Certified',
+        date: 'May 2020',
+        url: 'https://www.credly.com/badges/2378c8bd-d48e-4489-a213-7b5c4b3904ac'
     }
+];
+
+function Certifications() {
     return (
-        <>
-            <div id='certificationsRef' className="container-fluid">
-                <h1 className='d-flex justify-content-center' style={{ marginTop: '5%'}}><i className="bi bi-patch-check-fill"> My Certifications</i></h1>
-                <br></br>
-                <div className="row d-flex justify-content-center">
-                    <div className="card CertificationCard" style={{width: '35rem', paddingLeft: '5%'}}>
-                        <img style={{width: '4rem'}} className="card-img-top" src={az900} alt="Azure900 Logo"/>
-                        <div className="card-body CertificationBody">
-                            <p style={{margin: '0', color:textColor, fontSize: '18px', paddingLeft: '1rem'}} className="card-text">Microsoft Certified: Azure Fundamentals</p>
-                            <p style={{margin: '0', color:textColor, fontSize: '17px', paddingLeft: '1rem'}} className="card-text"><a style={{color:textColor}} href='https://www.credly.com/badges/29034a28-a2cb-498c-875f-070d6c900938/public_url' target="_blank" rel="noopener noreferrer">Issued by Microsoft</a></p>
-                            <p style={{margin: '0', color:textColor, fontSize: '16px', paddingLeft: '1rem'}} className="card-text">January, 2021</p>
-                        </div>
-                    </div>
-                    <div className="card CertificationCard" style={{width: '35rem', paddingLeft: '5%'}}>
-                        <img style={{width: '4rem'}} className="card-img-top" src={ibmbadge} alt="IBM Badge Logo"/>
-                        <div className="card-body CertificationBody">
-                            <p style={{margin: '0', color:textColor, fontSize: '18px', paddingLeft: '1rem'}} className="card-text">Cloud Computing & Virtualization Graduate</p>
-                            <p style={{margin: '0', color:textColor, fontSize: '17px', paddingLeft: '1rem'}} className="card-text"><a style={{color:textColor}} href='https://www.credly.com/badges/2378c8bd-d48e-4489-a213-7b5c4b3904ac/public_url' target="_blank" rel="noopener noreferrer">Issued by IBM</a></p>
-                            <p style={{margin: '0', color:textColor, fontSize: '16px', paddingLeft: '1rem'}} className="card-text">May, 2020</p>
-                        </div>
-                    </div>
-                    {/* <div className="card ExperienceCard" style={{width: '32rem', paddingLeft: '5%'}}>
-                        <img style={{width: '4rem'}} className="card-img-top" src="https://www.accenture.com/t20190904T055750Z__w__/us-en/_acnmedia/Accenture/Dev/Redesign/Acc_GT_Dimensional_Purple_RGB_REV.svg" alt="Accenture Logo"/>
-                        <div className="card-body ExperienceBody">
-                            <p style={{margin: '0', color:textColor, fontSize: '25px', paddingLeft: '1rem'}} className="card-text">Accenture</p>
-                            <p style={{margin: '0', color:textColor, fontSize: '20px', paddingLeft: '1rem'}} className="card-text">Full Stack Engineering Analyst</p>
-                            <p style={{margin: '0', color:textColor, fontSize: '15px', paddingLeft: '1rem'}} className="card-text">September, 2020 - Present</p>
-                        </div>
-                    </div> */}
+        <section id="certificationsRef" className="section" aria-labelledby="certifications-title">
+            <div className="section-heading">
+                <div>
+                    <p className="eyebrow">Proof points</p>
+                    <h2 id="certifications-title" className="section__title">Credentials & recognition</h2>
                 </div>
             </div>
-        </>
-    )
+            <div className="credentials-grid">
+                <div className="credential-list">
+                    {certifications.map(item => (
+                        <article className="credential" key={item.title}>
+                            <i className="bi bi-patch-check-fill" />
+                            <div>
+                                <h3>
+                                    <a href={item.url} target="_blank" rel="noopener noreferrer">
+                                        {item.title} <i className="bi bi-arrow-up-right credential__link-icon" />
+                                    </a>
+                                </h3>
+                                <p>{item.issuer}</p>
+                                <span>{item.date}</span>
+                            </div>
+                        </article>
+                    ))}
+                </div>
+                <article className="achievement">
+                    <p className="eyebrow">Selected achievement</p>
+                    <h3>First Place Winner, IBM Hackathon</h3>
+                    <p>Innovated a next-generation architecture for a legacy ATM system with Innovaccer and IBM Bengaluru.</p>
+                    <div className="achievement__publication">
+                        <i className="bi bi-journal-text" />
+                        <span>Published: Framework for Encryption and Authentication Cryptosystem<br /><small>Issue Vol. 29 No. 10s (2020), pp. 4572-4576</small><a className="publication-link" href="https://sersc.org/journals/index.php/IJAST/article/view/22011" target="_blank" rel="noopener noreferrer">Read paper <i className="bi bi-arrow-up-right" /></a></span>
+                    </div>
+                </article>
+            </div>
+        </section>
+    );
 }
 
 

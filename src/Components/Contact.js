@@ -1,38 +1,28 @@
 import React from 'react';
 
-function Contact(props) {
-    var textColor;
-    if(props.theme === 'dark'){
-        textColor = 'white'
-    } else{
-        textColor = 'black'
-    }
+const contacts = [
+    ['mailto:dhruvbaslas@gmail.com', 'envelope-fill', 'Email Dhruv'],
+    ['https://www.linkedin.com/in/dhruvbaslas/', 'linkedin', 'LinkedIn profile'],
+    ['https://github.com/dhruvbaslas', 'github', 'GitHub profile'],
+    ['https://twitter.com/dhruvbaslas', 'twitter', 'Twitter profile'],
+    ['https://www.instagram.com/dhruvbaslas/?hl=en', 'instagram', 'Instagram profile']
+];
+
+function Contact() {
 
     return (
-        <>
-            <div id='contactRef' className="container-fluid">
-                <h1 className='d-flex justify-content-center' style={{ marginTop: '5%', paddingBottom: '15px'}}><i className="bi bi-person-lines-fill"> Let's Connect</i></h1>
-                <br></br>
-                <div className="row d-flex justify-content-center">
-                    <div className="col-lg-1 d-flex justify-content-center">
-                    <h1><a style={{color:textColor}} href="mailto:dhruvbaslas@gmail.com"><i width="30" height="30" className="bi bi-envelope-fill"></i></a></h1>
-                    </div>
-                    <div className="col-lg-1 d-flex justify-content-center">
-                    <h1><a style={{color:textColor}} href="https://www.linkedin.com/in/dhruvbaslas/" target="_blank" rel="noopener noreferrer"><i width="30" height="30" className="bi bi-linkedin"></i></a></h1>
-                    </div>
-                    <div className="col-lg-1 d-flex justify-content-center">
-                    <h1><a style={{color:textColor}} href="https://github.com/dhruvbaslas" target="_blank" rel="noopener noreferrer"><i width="30" height="30" className="bi bi-github"></i></a></h1>
-                    </div>
-                    <div className="col-lg-1 d-flex justify-content-center">
-                    <h1><a style={{color:textColor}} href="https://twitter.com/dhruvbaslas" target="_blank" rel="noopener noreferrer"><i width="30" height="30" className="bi bi-twitter"></i></a></h1>
-                    </div>
-                    <div className="col-lg-1 d-flex justify-content-center">
-                    <h1><a style={{color:textColor}} href="https://www.instagram.com/dhruvbaslas/?hl=en" target="_blank" rel="noopener noreferrer"><i width="30" height="30" className="bi bi-instagram"></i></a></h1>
-                    </div>
-                </div>
+        <section id="contactRef" className="section contact-section" aria-labelledby="contact-title">
+            <p className="eyebrow">Have a data problem worth solving?</p>
+            <h2 id="contact-title" className="contact-title">Let's build a clearer path from source to insight.</h2>
+            <p className="contact-copy">I am open to conversations about data engineering, platform architecture, and teams building trustworthy systems at scale.</p>
+            <div className="contact-actions">
+                <a className="button button--primary" href="https://www.linkedin.com/in/dhruvbaslas/" target="_blank" rel="noopener noreferrer">Let's connect on LinkedIn <i className="bi bi-arrow-up-right" /></a>
+                <ul className="contact-list">
+                    {contacts.slice(0, 1).concat(contacts.slice(2)).map(([url, icon, label]) => <li key={icon}><a href={url} target={url.startsWith('mailto:') ? undefined : '_blank'} rel={url.startsWith('mailto:') ? undefined : 'noopener noreferrer'} aria-label={label}><i className={`bi bi-${icon}`} /></a></li>)}
+                </ul>
             </div>
-        </>
-    )
+        </section>
+    );
 }
 
 

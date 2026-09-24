@@ -1,57 +1,20 @@
 import React from 'react'
-import './Experience.css';
-import gla from '../Static/gla.png'
-import tedx from '../Static/tedxglau.png'
+const experience = [
+    { period: 'Feb 2025 - Present', company: 'JD Software Pvt. Ltd.', role: 'Senior Data Engineer', outcome: 'Built a metadata-driven Bronze / Silver / Gold Lakehouse in Azure Databricks, improving pipeline processing speed by 40%.', tools: 'Azure Databricks, ADF, ADLS, Unity Catalog, PySpark' },
+    { period: 'Aug 2024 - Jan 2025', company: 'Accenture | UnitedHealth Group', role: 'Data Engineer, Team Lead', outcome: 'Connected Airflow, Databricks APIs, and ADLS to deliver analytics-ready Delta data for 50+ downstream consumers, reducing data availability SLAs by 30%.', tools: 'Apache Airflow, Databricks, ADLS, Delta Lake' },
+    { period: 'Sep 2020 - Jul 2024', company: 'Accenture | UBS', role: 'Data Engineer, Analyst to Team Lead', outcome: 'Architected metadata-driven pipelines processing 500 GB+ of daily mainframe and Oracle data, while reducing deployment overhead by 50% through Azure DevOps CI/CD.', tools: 'ADF, AutoSys, PySpark, Oracle, Azure DevOps' }
+];
 
-function Experience(props) {
-    var textColor;
-    if(props.theme === 'dark'){
-        textColor = 'white'
-    } else{
-        textColor = 'black'
-    }
+function Experience() {
     return (
-        <>
-            <div id='experienceRef' className="container-fluid">
-                <h1 className='d-flex justify-content-center' style={{ marginTop: '5%'}}><i className="bi bi-stack"> My Experience</i></h1>
-                <br></br>
-                <div className="row d-flex justify-content-center">
-                    <div className="card ExperienceCard" style={{width: '32rem', paddingLeft: '5%'}}>
-                        <img style={{width: '4rem'}} className="card-img-top" src="https://www.accenture.com/t20190904T055750Z__w__/us-en/_acnmedia/Accenture/Dev/Redesign/Acc_GT_Dimensional_Purple_RGB_REV.svg" alt="Accenture Logo"/>
-                        <div className="card-body ExperienceBody">
-                            <p style={{margin: '0', color:textColor, fontSize: '25px', paddingLeft: '1rem'}} className="card-text">Accenture</p>
-                            <p style={{margin: '0', color:textColor, fontSize: '20px', paddingLeft: '1rem'}} className="card-text">Full Stack Engineering Analyst</p>
-                            <p style={{margin: '0', color:textColor, fontSize: '15px', paddingLeft: '1rem'}} className="card-text">September, 2020 - Present</p>
-                        </div>
-                    </div>
-                    <div className="card ExperienceCard" style={{width: '32rem', paddingLeft: '5%'}}>
-                        <img style={{width: '4rem'}} className="card-img-top" src={gla} alt="GLA Logo"/>
-                        <div className="card-body ExperienceBody">
-                            <p style={{margin: '0', color:textColor, fontSize: '25px', paddingLeft: '1rem'}} className="card-text">GLA University</p>
-                            <p style={{margin: '0', color:textColor, fontSize: '20px', paddingLeft: '1rem'}} className="card-text">Computer Science & Engineering</p>
-                            <p style={{margin: '0', color:textColor, fontSize: '15px', paddingLeft: '1rem'}} className="card-text">2016 - 2020</p>
-                        </div>
-                    </div>
-                    <div className="card ExperienceCard" style={{width: '32rem', paddingLeft: '5%'}}>
-                        <img style={{width: '4rem'}} className="card-img-top" src={tedx} alt="TEDxGLAU Logo"/>
-                        <div className="card-body ExperienceBody">
-                            <p style={{margin: '0', color:textColor, fontSize: '25px', paddingLeft: '1rem'}} className="card-text">TEDxGLAU</p>
-                            <p style={{margin: '0', color:textColor, fontSize: '20px', paddingLeft: '1rem'}} className="card-text">Head of Publicity</p>
-                            <p style={{margin: '0', color:textColor, fontSize: '15px', paddingLeft: '1rem'}} className="card-text">June, 2019 - Dec, 2019</p>
-                        </div>
-                    </div>
-                    {/* <div className="card ExperienceCard" style={{width: '32rem', paddingLeft: '5%'}}>
-                        <img style={{width: '4rem'}} className="card-img-top" src="https://www.accenture.com/t20190904T055750Z__w__/us-en/_acnmedia/Accenture/Dev/Redesign/Acc_GT_Dimensional_Purple_RGB_REV.svg" alt="Accenture Logo"/>
-                        <div className="card-body ExperienceBody">
-                            <p style={{margin: '0', color:textColor, fontSize: '25px', paddingLeft: '1rem'}} className="card-text">TedxGLAU</p>
-                            <p style={{margin: '0', color:textColor, fontSize: '20px', paddingLeft: '1rem'}} className="card-text">Head of Publicity</p>
-                            <p style={{margin: '0', color:textColor, fontSize: '15px', paddingLeft: '1rem'}} className="card-text">June, 2019 - Dec, 2019</p>
-                        </div>
-                    </div> */}
-                </div>
-            </div>
-        </>
-    )
+        <section id="experienceRef" className="section" aria-labelledby="experience-title">
+            <div className="section-heading"><div><p className="eyebrow">Where I have made an impact</p><h2 id="experience-title" className="section__title">Experience</h2></div><span className="section-count">01 / 03</span></div>
+            <div className="timeline">{experience.map(item => <article className="timeline-item" key={item.company}>
+                <div className="timeline-item__period">{item.period}</div>
+                <div className="timeline-item__body"><p className="timeline-item__company">{item.company}</p><h3>{item.role}</h3><p className="timeline-item__outcome">{item.outcome}</p><p className="timeline-item__tools">{item.tools}</p></div>
+            </article>)}</div>
+        </section>
+    );
 }
 
 
