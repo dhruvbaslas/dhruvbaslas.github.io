@@ -9,8 +9,9 @@ Live site: [dhruvbaslas.github.io](https://dhruvbaslas.github.io)
 - React 18
 - Vite
 - Vitest and Testing Library
-- Bootstrap 5 and Bootstrap Icons
+- Bootstrap Icons
 - GitHub Pages via `gh-pages`
+- Plausible Analytics
 
 ## Local Development
 
@@ -43,6 +44,12 @@ npm run deploy
 ```
 
 GitHub Pages serves the site at `https://dhruvbaslas.github.io`.
+
+Pushes to `main` also run the GitHub Actions workflow in `.github/workflows/deploy.yml`, which installs dependencies, runs tests, builds `dist/`, and publishes the site.
+
+## SEO and Sharing
+
+The public entry document includes canonical metadata, Open Graph and Twitter cards, JSON-LD profile data, `robots.txt`, a sitemap, and an `og-image.svg` preview asset. Submit `https://dhruvbaslas.github.io/sitemap.xml` to Google Search Console after publishing.
 
 ## Structure
 

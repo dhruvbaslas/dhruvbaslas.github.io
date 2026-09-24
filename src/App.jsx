@@ -13,8 +13,9 @@ function App() {
 
   return (
     <div className={`app app--${theme}`}>
+      <a className="skip-link" href="#main-content">Skip to content</a>
       <DarkTheme theme={theme} onToggle={() => setTheme(current => current === 'dark' ? 'light' : 'dark')} />
-      <main>
+      <main id="main-content">
         <Home />
         <Resume />
         <Experience />
